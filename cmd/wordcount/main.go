@@ -14,7 +14,7 @@ import (
 func main() {
 	fn := pflag.StringP("input", "i", "", "Path to input data file")
 	top := pflag.IntP("top", "t", 20, "Display top N words in file")
-	buckets := pflag.IntP("heap", "h", 1024, "Number of buckets in hash")
+	buckets := pflag.IntP("heap", "h", 1019, "Number of buckets in hash")
 
 	pflag.Parse()
 	err := countWords(*fn, *top, *buckets)
