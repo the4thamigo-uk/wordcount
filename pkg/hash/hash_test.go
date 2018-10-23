@@ -55,5 +55,5 @@ func TestHash_Counts(t *testing.T) {
 	assert.Equal(t, 1, c)
 
 	counts := h.Counts()
-	t.Log(counts)
+	assert.Len(t, counts, 7)
 }

@@ -1,17 +1,23 @@
 package hash
 
 import (
+	"github.com/stretchr/testify/assert"
 	"testing"
 )
 
 func TestRSHash_Nil(t *testing.T) {
 	h := RSHash(nil)
-	t.Log(h)
+	assert.Equal(t, uint(0), h)
 }
 
-func TestRSHash_Values(t *testing.T) {
+func TestRSHash_Different(t *testing.T) {
 	h1 := RSHash([]byte("apple"))
-	t.Log(h1)
 	h2 := RSHash([]byte("orange"))
-	t.Log(h2)
+	assert.NotEqual(t, h1, h2)
+}
+
+func TestRSHash_Same(t *testing.T) {
+	h1 := RSHash([]byte("apple"))
+	h2 := RSHash([]byte("orange"))
+	assert.NotEqual(t, h1, h2)
 }

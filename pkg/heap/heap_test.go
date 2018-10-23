@@ -17,8 +17,6 @@ func TestHeap_SingleItem_AddGreaterThanMax(t *testing.T) {
 	h := New(2)
 	h.AddString("banana", 1)
 	h.AddString("apple", 2)
-	t.Log(h.min())
-	t.Log(h.max())
 	items := h.Counts()
 	assert.Len(t, items, 2)
 	assert.Equal(t, "apple", items[0].String())
